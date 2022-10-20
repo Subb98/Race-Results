@@ -1,0 +1,23 @@
+{
+    "name": "subb98/race-results",
+    "description": "Test task for PHP developer position at Smart Logistics",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Subb98\\RaceResults\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladislav Subbotin",
+            "email": "subb98@gmail.com",
+            "role": "Owner"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1"
+    }
+}

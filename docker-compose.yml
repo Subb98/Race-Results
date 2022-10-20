@@ -1,0 +1,18 @@
+services:
+  php-fpm:
+    build: .
+    container_name: ${COMPOSE_PROJECT_NAME:-race-results}.php-fpm
+    volumes:
+      - ./data/:/usr/local/src/data/
+    restart: on-failure
+  nginx:
+    image: nginx:1.23.2-alpine
+    container_name: ${COMPOSE_PROJECT_NAME:-race-results}.nginx
+    depends_on:
+      - php-fpm
+    ports:
+      - 8000:80
+    volumes:
+      - ./docker/nginx/:/etc/nginx/conf.d/
+      - .:/usr/local/src/
+    restart: on-failure
