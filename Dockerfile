@@ -2,6 +2,12 @@ FROM php:8.1.11-fpm-alpine3.16
 
 ENV ROOT_DIR="/usr/local/src/"
 ENV APP_ENV="development"
+ENV USER=docker
+ENV UID=1000
+
+EXPOSE 9000
+
+CMD ["php-fpm"]
 
 WORKDIR /usr/local/src/
 
@@ -13,9 +19,6 @@ RUN curl https://getcomposer.org/composer.phar > /usr/local/bin/composer \
 
 WORKDIR /usr/local/src/public/
 
-ENV USER=docker
-ENV UID=1000
-
 RUN adduser \
     --disabled-password \
     --gecos "" \
@@ -24,7 +27,3 @@ RUN adduser \
     "$USER"
 
 USER "$USER"
-
-EXPOSE 9000
-
-CMD ["php-fpm"]

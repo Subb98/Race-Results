@@ -70,24 +70,23 @@ final class TournamentDataProvider
      */
     private function sortData(array &$tournamentData): void
     {
-        function sortDrivers($sum, $sumStr, $name) {
-            return function ($a, $b) use ($sum, $sumStr, $name) {
-                if ($a[$sum] > $b[$sum]) {
+        usort(
+            $tournamentData,
+            function ($a, $b) {
+                if ($a['result_sum'] > $b['result_sum']) {
                     return -1;
-                } elseif ($a[$sum] < $b[$sum]) {
+                } elseif ($a['result_sum'] < $b['result_sum']) {
                     return 1;
                 } else {
-                    if ($a[$sumStr] > $b[$sumStr]) {
+                    if ($a['result_sum_str'] > $b['result_sum_str']) {
                         return -1;
-                    } elseif ($a[$sumStr] < $b[$sumStr]) {
+                    } elseif ($a['result_sum_str'] < $b['result_sum_str']) {
                         return 1;
                     } else {
-                        return strnatcmp($a[$name], $b[$name]);
+                        return strnatcmp($a['name'], $b['name']);
                     }
                 }
-            };
-        }
-
-        usort($tournamentData, sortDrivers('result_sum', 'result_sum_str', 'name'));
+            }
+        );
     }
 }
