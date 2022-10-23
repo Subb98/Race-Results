@@ -5,19 +5,14 @@ ENV APP_ENV="development"
 ENV USER=docker
 ENV UID=1000
 
+WORKDIR /usr/local/src/public/
+
 EXPOSE 9000
 
 CMD ["php-fpm"]
 
-WORKDIR /usr/local/src/
-
-COPY . .
-
 RUN curl https://getcomposer.org/composer.phar > /usr/local/bin/composer \
-    && chmod a+x /usr/local/bin/composer \
-    && /usr/local/bin/composer install
-
-WORKDIR /usr/local/src/public/
+    && chmod a+x /usr/local/bin/composer
 
 RUN adduser \
     --disabled-password \

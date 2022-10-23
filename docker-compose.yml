@@ -1,6 +1,6 @@
 services:
   php-fpm:
-    build: .
+    build: docker/php-fpm
     container_name: ${COMPOSE_PROJECT_NAME:-race-results}.php-fpm
     volumes:
       - ./:/usr/local/src/
