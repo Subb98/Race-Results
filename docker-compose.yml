@@ -13,5 +13,5 @@ services:
     ports:
       - 8000:80
     volumes:
+      - ./:/usr/local/src/
       - ./docker/nginx/:/etc/nginx/conf.d/
-      - .:/usr/local/src/
