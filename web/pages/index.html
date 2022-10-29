@@ -21,7 +21,7 @@
     </nav>
     <table class="table table-striped">
         <tbody>
-        <?php foreach ($csvData as $k => $item) { ?>
+        <?php foreach ($csvData as $k => $item): ?>
         <?php if (0 === $k): ?>
         <thead>
         <tr>
@@ -49,7 +49,7 @@
             <td><?= $item['result_sum']; ?></td>
         </tr>
         <?php endif; ?>
-        <?php } ?>
+        <?php endforeach; ?>
         </tbody>
     </table>
     <!-- Optional JavaScript -->
