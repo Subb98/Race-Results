@@ -1,4 +1,6 @@
 # Race Results
+[![Build Status](https://travis-ci.org/Subb98/Race-Results.svg?branch=master)](https://travis-ci.org/Subb98/Race-Results)
+[![StyleCI](https://styleci.io/repos/559265810/shield)](https://styleci.io/repos/559265810)
 
 ## Описание
 Организаторы провели соревнования по автогонкам среди 15 участников. У каждого участника был свой уникальный номер (пример и формат данных в файле data_cars.json). Заезды проходили в случайном порядке, каждому участнику было дано 4 попытки, всего было проведено 60 заездов. За каждую попытку участнику присваивались очки (результаты каждого заезда вы можете найти в файле data_attempts.json).
