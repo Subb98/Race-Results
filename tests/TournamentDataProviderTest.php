@@ -83,7 +83,7 @@ final class TournamentDataProviderTest extends TestCase
      * При совпадении суммарных баллов у двух участников позиция выше у того, который набрал больше баллов в 4-ом заезде, затем в 3-ем, во 2-ом и в 1-ом
      * @return void
      */
-    public function testSimilarResults():void
+    public function testSimilarResults(): void
     {
         $inputDataFileCars = realpath(__DIR__ . '/fixtures/data_cars.json');
         $inputDataFileAttempts = realpath(__DIR__ . '/fixtures/data_attempts.json');
@@ -105,7 +105,7 @@ final class TournamentDataProviderTest extends TestCase
      * Если суммы очков совпадают во всех попытках, то участников нужно отсортировать по фамилии в алфавитном порядке
      * @return void
      */
-    public function testSimilarResultsName():void
+    public function testSimilarResultsName(): void
     {
         $inputDataFileCars = realpath(__DIR__ . '/fixtures/data_cars.json');
         $inputDataFileAttempts = realpath(__DIR__ . '/fixtures/data_attempts_similar.json');
